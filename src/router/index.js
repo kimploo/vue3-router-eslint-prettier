@@ -1,8 +1,9 @@
 import { createRouter, createWebHistory } from "vue-router";
-import Home from "../views/Home.vue";
-import About from "../views/About.vue";
-import Contact from "../views/Contact.vue";
-import Services from "../views/Services.vue";
+import Home from "@/views/Home.vue";
+import About from "@/views/About.vue";
+import Contact from "@/views/Contact.vue";
+import Posts from "@/views/Posts.vue";
+import UserProfile from "@/views/UserProfile.vue";
 
 const routes = [
   {
@@ -21,9 +22,14 @@ const routes = [
     component: Contact,
   },
   {
-    path: "/services",
-    name: "Services",
-    component: Services,
+    path: "/posts",
+    name: "Postes",
+    component: Posts,
+  },
+  {
+    path: "/user/:id",
+    name: "UserProfile",
+    component: UserProfile,
   },
 ];
 

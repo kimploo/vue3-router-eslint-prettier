@@ -1,9 +1,18 @@
-<script>
-export default {};
-</script>
+<scripts setup>
+</scripts>
 
 <template>
-  <div></div>
+  <footer>
+    <div>My Todo App</div>
+  </footer>
 </template>
 
-<style scoped></style>
+<style scoped>
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  background-color: #e2dad6;
+}
+</style>

@@ -1,19 +1,46 @@
+<script setup>
+import Footer from "./components/Footer.vue";
+import Header from "./components/Header.vue";
+</script>
+
 <template>
-  <nav>
-    <router-link to="/">Home</router-link>
-    <router-link to="/about">about</router-link>
-    <router-link to="/contact">contact</router-link>
-    <router-link to="/service">service</router-link>
-  </nav>
   <main>
-    <router-view />
+    <Header></Header>
+    <section class="main">
+      <router-view />
+    </section>
+    <Footer></Footer>
   </main>
 </template>
 
-<script>
-export default {
-  name: "App",
-};
-</script>
+<style>
+nav {
+  padding: 2rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  background-color: #6482ad;
+}
 
-<style></style>
+nav a {
+  text-transform: uppercase;
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: #7fa1c3;
+  color: #f5eded;
+}
+
+main {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+section.main {
+  display: flex;
+  justify-content: center;
+  flex: 1 0 0;
+}
+</style>
