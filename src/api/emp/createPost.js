@@ -1,16 +1,11 @@
 import axios from "@/api/axios";
 
-/**
- * @argument title {string}
- * @argument body {string}
- * @argument userId {number}
- */
-export default async function createPost({ title, body, userId }) {
+export default async function createPost({ name, position, salary }) {
   try {
     const res = await axios.post("/emp", {
-      title,
-      body,
-      userId,
+      name,
+      position,
+      salary,
     });
     console.log(res);
   } catch (e) {

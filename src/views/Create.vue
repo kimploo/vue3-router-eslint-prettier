@@ -1,6 +1,6 @@
 <script setup>
+import createPost from "@/api/emp/createPost";
 import getPostById from "@/api/emp/getPostById";
-import updatePost from "@/api/emp/updatePost";
 import { onMounted, ref } from "vue";
 import { useRoute, useRouter } from "vue-router";
 const route = useRoute();
@@ -21,10 +21,9 @@ onMounted(async () => {
   }
 });
 
-const update = async (id) => {
-  console.log(id);
+const postEmp = async () => {
   try {
-    await updatePost(id, {
+    await createPost({
       name: empName.value,
       position: empPosition.value,
       salary: empSalary.value,
@@ -38,10 +37,10 @@ const update = async (id) => {
 
 <template>
   <section>
-    <div class="edit-title">
-      <h2>{{ "직원 " + route.params.id + " 정보 수정" }}</h2>
+    <div class="create-title">
+      <h2>직원 등록</h2>
     </div>
-    <form @submit.prevent="update(route.params.id)">
+    <form @submit.prevent="postEmp(route.params.id)">
       <div>
         <label for="empName">이름</label>
         <input type="text" v-model="empName" id="empName" />
@@ -54,7 +53,9 @@ const update = async (id) => {
         <label for="empSalary">급여</label>
         <input type="number" step="1000" v-model="empSalary" id="empSalary" />
       </div>
-      <button type="submit">수정</button>
+      <div class="button-container">
+        <button type="submit">등록</button>
+      </div>
     </form>
   </section>
 </template>
@@ -67,7 +68,7 @@ section {
   gap: 1rem;
 }
 
-div.edit-title {
+div.create-title {
   text-align: center;
 }
 

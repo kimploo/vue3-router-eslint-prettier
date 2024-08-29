@@ -5,7 +5,7 @@ import { useRouter } from "vue-router";
 import deletePostById from "@/api/emp/deletePost";
 const router = useRouter();
 const post = ref([]);
-const newPostTitle = ref("");
+// const newPostTitle = ref("");
 
 onMounted(async () => {
   try {
@@ -16,6 +16,10 @@ onMounted(async () => {
     console.log(e);
   }
 });
+
+const goToCreate = () => {
+  router.push("/create");
+};
 
 const updatePost = async (id) => {
   router.push(`/edit/${id}`);
@@ -34,14 +38,9 @@ const deletePost = async (id) => {
 
 <template>
   <section>
-    <div>
-      <h3>create post</h3>
-      <input
-        v-model="newPostTitle"
-        type="text"
-        placeholder="Enter post title"
-      />
-      <button @click="createPost">post</button>
+    <div class="main-title">
+      <button @click="goToCreate">직원 등록</button>
+      <h2>직원 관리 시스템</h2>
     </div>
     <ul>
       <li>
@@ -76,6 +75,20 @@ const deletePost = async (id) => {
 section {
   width: 768px;
   padding: 2rem;
+}
+
+div.main-title {
+  text-align: center;
+}
+
+div.main-title > button {
+  position: absolute;
+  right: 2rem;
+  height: 2rem;
+  background-color: white;
+  border-radius: 6px;
+  border: 1px dotted white;
+  padding: 0.5rem;
 }
 
 ul {
