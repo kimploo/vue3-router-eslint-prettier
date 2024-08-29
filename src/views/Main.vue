@@ -5,30 +5,22 @@ import { useRouter } from "vue-router";
 import deletePostById from "@/api/emp/deletePost";
 const router = useRouter();
 const post = ref([]);
-// const newPostTitle = ref("");
 
 onMounted(async () => {
   try {
     const postRes = await getPosts();
     // console.log(postRes);
-    post.value = postRes.data;
+    post.value = postRes.data.toSorted(
+      (a, b) => Number(b.empId) - Number(a.empId),
+    );
   } catch (e) {
     console.log(e);
   }
 });
 
-const goToCreate = () => {
-  router.push("/create");
-};
-
-const goToUserInfo = (id) => {
-  router.push(`user/${id}`);
-};
-
-const updatePost = async (id) => {
-  router.push(`/edit/${id}`);
-};
-
+const goToCreate = () => router.push("/create");
+const goToUserInfo = (id) => router.push(`user/${id}`);
+const updatePost = async (id) => router.push(`/edit/${id}`);
 const deletePost = async (id) => {
   try {
     await deletePostById(id);
@@ -54,10 +46,7 @@ const deletePost = async (id) => {
           <span class="emp-header-position">직위</span>
           <span class="emp-header-salary">급여</span>
         </div>
-        <div class="emp-buttons">
-          <!-- <button>Update Post</button> -->
-          <!-- <button>delete</button> -->
-        </div>
+        <div class="emp-buttons"></div>
       </li>
       <li v-for="(p, i) in post" :key="i">
         <div class="emp-info" @click="goToUserInfo(p.empId)">
@@ -123,6 +112,7 @@ li button {
   border-radius: 6px;
   border: 0;
   padding: 0.5rem 1rem;
+  cursor: pointer;
 }
 
 div.emp-info {

@@ -22,7 +22,6 @@ onMounted(async () => {
 });
 
 const update = async (id) => {
-  console.log(id);
   try {
     await updatePost(id, {
       name: empName.value,
