@@ -15,7 +15,7 @@ import Header from "./components/Header.vue";
 
 <style>
 nav {
-  padding: 2rem 1rem;
+  padding: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,8 +25,9 @@ nav {
 
 nav a {
   text-transform: uppercase;
-  padding: 1rem;
-  border-radius: 1rem;
+  font-size: 0.8rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
   background-color: #7fa1c3;
   color: #f5eded;
 }

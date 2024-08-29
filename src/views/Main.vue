@@ -85,10 +85,13 @@ div.main-title > button {
   position: absolute;
   right: 2rem;
   height: 2rem;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.8);
   border-radius: 6px;
-  border: 1px dotted white;
-  padding: 0.5rem;
+  border: 0;
+  padding: 1.5rem 1.5rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
 }
 
 ul {
@@ -96,6 +99,11 @@ ul {
   flex-direction: column;
   padding-top: 1rem;
   gap: 0.5rem;
+}
+
+ul li:first-child {
+  border-bottom: 1px dotted gray;
+  padding-bottom: 0.5rem;
 }
 
 li {
@@ -107,10 +115,10 @@ li {
 
 li button {
   border: 0;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.8);
   border-radius: 6px;
-  border: 1px dotted white;
-  padding: 2px;
+  border: 0;
+  padding: 0.5rem 1rem;
 }
 
 div.emp-info {
@@ -121,6 +129,8 @@ div.emp-info {
 }
 
 div.emp-info > span {
+  display: inline-flex;
+  align-items: center;
   flex: 1 0 0;
 }
 

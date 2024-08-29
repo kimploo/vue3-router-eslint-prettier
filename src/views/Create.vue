@@ -90,5 +90,12 @@ div.button-container {
 div.button-container button {
   margin: 1rem;
   flex-grow: 1;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 6px;
+  border: 0;
+  padding: 0.5rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
 }
 </style>
