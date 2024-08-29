@@ -21,6 +21,10 @@ const goToCreate = () => {
   router.push("/create");
 };
 
+const goToUserInfo = (id) => {
+  router.push(`user/${id}`);
+};
+
 const updatePost = async (id) => {
   router.push(`/edit/${id}`);
 };
@@ -56,7 +60,7 @@ const deletePost = async (id) => {
         </div>
       </li>
       <li v-for="(p, i) in post" :key="i">
-        <div class="emp-info">
+        <div class="emp-info" @click="goToUserInfo(p.empId)">
           <span class="emp-item-id">{{ p.empId }}</span>
           <span class="emp-item-name">{{ p.name }}</span>
           <span class="emp-item-position">{{ p.position }}</span>
@@ -126,6 +130,7 @@ div.emp-info {
   justify-content: flex-start;
   gap: 1rem;
   flex-grow: 1;
+  cursor: pointer;
 }
 
 div.emp-info > span {
