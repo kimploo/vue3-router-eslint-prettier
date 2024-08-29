@@ -49,6 +49,7 @@ const deletePost = async (id) => {
           <span class="emp-header-id">id</span>
           <span class="emp-header-name">이름</span>
           <span class="emp-header-position">직위</span>
+          <span class="emp-header-salary">급여</span>
         </div>
         <div class="emp-buttons">
           <!-- <button>Update Post</button> -->
@@ -60,6 +61,7 @@ const deletePost = async (id) => {
           <span class="emp-item-id">{{ p.empId }}</span>
           <span class="emp-item-name">{{ p.name }}</span>
           <span class="emp-item-position">{{ p.position }}</span>
+          <span class="emp-item-salary">{{ p.salary }}</span>
         </div>
         <div class="emp-buttons">
           <button @click="updatePost(p.empId)">수정</button>
