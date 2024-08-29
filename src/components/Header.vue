@@ -3,11 +3,8 @@
 <template>
   <nav>
     <router-link to="/">Home</router-link>
-    <router-link to="/about">about</router-link>
-    <router-link to="/contact">contact</router-link>
-    <router-link to="/posts">posts</router-link>
-    <router-link to="/user/1">Profile 1</router-link>
-    <router-link to="/user/2">Profile 2</router-link>
+    <!-- <router-link to="/edit/:id">edit</router-link> -->
+    <!-- <router-link to="/user/:id">detail</router-link> -->
   </nav>
 </template>
 
