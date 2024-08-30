@@ -2,14 +2,15 @@
 import { ref, onMounted } from "vue";
 import getPosts from "@/api/emp/getPosts";
 import { useRouter } from "vue-router";
+import { useEmpStore } from "@/store/emp";
 import deletePostById from "@/api/emp/deletePost";
 const router = useRouter();
 const post = ref([]);
+const empStore = useEmpStore();
 
 onMounted(async () => {
   try {
-    const postRes = await getPosts();
-    // console.log(postRes);
+    const postRes = await empStore.getAllEmps();
     post.value = postRes.data.toSorted(
       (a, b) => Number(b.empId) - Number(a.empId),
     );
